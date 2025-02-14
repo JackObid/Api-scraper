@@ -8,7 +8,7 @@ from flask_limiter.util import get_remote_address
 app = Flask(__name__)
 
 # Initialize the rate limiter with the correct parameter name
-limiter = Limiter(get_remote_address, app=app, default_limits=["200 per day", "50 per hour"])  # Corrected 'key_function' to 'key_func'
+limiter = Limiter(get_remote_address, app=app, default_limits=["100 per day", "10 per minute"])  # Corrected 'key_function' to 'key_func'
 
 @app.route('/scrape', methods=['POST'])
 @limiter.limit("100/day")  # Allow 100 requests per day per IP
