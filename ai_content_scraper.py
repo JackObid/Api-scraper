@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import requests
+import json
 from bs4 import BeautifulSoup
 from markdownify import markdownify as md
 from sumy.parsers.plaintext import PlaintextParser
